@@ -12,3 +12,8 @@ class Persona(models.Model):
 
 	def __str__(self):
    		return self.nombre+" "+self.apellidos
+
+class Solicitud(models.Model):
+	persona = models.ForeignKey(Persona, null=True, blank=True)
+	numero_mascotas = models.IntegerField()
+	razones = models.TextField()
